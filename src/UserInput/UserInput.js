@@ -2,8 +2,6 @@ import React from 'react';
 
 const UserInput = (props) => {
 
-
-
   const userInputStyle = {
     margin: '0 auto',
     display:'flex',
@@ -17,20 +15,19 @@ const UserInput = (props) => {
         <form className='input-container'>
           <div>
             <label htmlFor="">Brand:</label>
-            <input type="text" name="brand" onChange={props.onChange} value={props.brand}/>
+            <input type="text" name="brand" onChange={props.change} value={props.brand}/>
           </div>
           <div>
-
             <label htmlFor="">Series:</label>
-            <input type="text" name="brand" onChange={props.onChange} value={props.series}/>
+            <input type="text" name="series" onChange={props.change} value={props.series}/>
           </div>
           <div>
             <label htmlFor="">Product Name:</label>
-            <input type="text" name="brand" onChange={props.onChange} value={props.productName}/>
+            <input type="text" name="productName" onChange={props.change} value={props.productName}/>
           </div>
           <div>
             <label htmlFor="">Product Type:</label>
-            <select type="select" name="brand" onChange={props.onChange} value={props.productType}>
+            <select type="select" name="productType" onChange={props.change} value={props.productType}>
               <option value="">Select Type</option>
               <option value="desktop">Desktops</option>
               <option value="laptop">Laptops</option>

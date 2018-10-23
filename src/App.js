@@ -11,6 +11,15 @@ class App extends Component {
     productName: '',
     productType: ''
   }
+
+
+  userInputHandler = (event)=>{
+    this.setState({
+      [event.target.name]:event.target.value
+    })
+    console.log(event.target.name);
+  }
+
   render() {
 
     const buttonStyle = {
@@ -21,18 +30,28 @@ class App extends Component {
       cursor: 'pointer'
     }
 
+
     return (
       <div className="App">
         <UserInput
           brand={this.state.brand}
           series={this.state.series}
           product={this.state.productName}
-          productType={this.state.productType} />
+          productType={this.state.productType}
+          change={(event)=>this.userInputHandler(event)} />
           <button
             style={buttonStyle}>Click for file names</button>
         <div className="output-container">
-          <SeriesPage />
-          <SubSeriesPage />
+          <SeriesPage
+            brand={this.state.brand}
+            series={this.state.series}
+            product={this.state.productName}
+            productType={this.state.productType}/>
+          <SubSeriesPage
+            brand={this.state.brand}
+            series={this.state.series}
+            product={this.state.productName}
+            productType={this.state.productType}/>
         </div>
 
       </div>
